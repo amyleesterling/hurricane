@@ -1,0 +1,1517 @@
+{
+  "version": "demo-v1",
+  "generatedAt": "2026-07-12T23:56:07.260901Z",
+  "source": {
+    "name": "IBTrACS",
+    "version": "v04r01",
+    "url": "https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r01/access/csv/ibtracs.since1980.list.v04r01.csv",
+    "selection": "two strongest well-sampled storms per basin and decade, capped at 60"
+  },
+  "storms": [
+    {
+      "id": "1980214N11330",
+      "name": "Allen",
+      "season": 1980,
+      "basin": "NA",
+      "subBasin": "NA",
+      "firstTime": "1980-07-31T12:00:00Z",
+      "lastTime": "1980-08-11T18:00:00Z",
+      "peakTime": "1980-08-07T18:00:00Z",
+      "maxWindKt": 165.0,
+      "minPressureMb": 899.0,
+      "category": 5,
+      "trackAsset": "data/tracks/1980214N11330.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "1988253N12306",
+      "name": "Gilbert",
+      "season": 1988,
+      "basin": "NA",
+      "subBasin": "NA",
+      "firstTime": "1988-09-08T18:00:00Z",
+      "lastTime": "1988-09-20T00:00:00Z",
+      "peakTime": "1988-09-14T00:00:00Z",
+      "maxWindKt": 160.0,
+      "minPressureMb": 888.0,
+      "category": 5,
+      "trackAsset": "data/tracks/1988253N12306.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "1987253N11260",
+      "name": "Max",
+      "season": 1987,
+      "basin": "EP",
+      "subBasin": "MM",
+      "firstTime": "1987-09-09T12:00:00Z",
+      "lastTime": "1987-09-16T12:00:00Z",
+      "peakTime": "1987-09-13T06:00:00Z",
+      "maxWindKt": 135.0,
+      "minPressureMb": null,
+      "category": 4,
+      "trackAsset": "data/tracks/1987253N11260.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "1982262N11258",
+      "name": "Olivia",
+      "season": 1982,
+      "basin": "EP",
+      "subBasin": "MM",
+      "firstTime": "1982-09-18T18:00:00Z",
+      "lastTime": "1982-09-25T18:00:00Z",
+      "peakTime": "1982-09-21T18:00:00Z",
+      "maxWindKt": 125.0,
+      "minPressureMb": null,
+      "category": 4,
+      "trackAsset": "data/tracks/1982262N11258.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "1984294N04163",
+      "name": "Vanessa",
+      "season": 1984,
+      "basin": "WP",
+      "subBasin": "MM",
+      "firstTime": "1984-10-20T00:00:00Z",
+      "lastTime": "1984-10-31T18:00:00Z",
+      "peakTime": "1984-10-26T12:00:00Z",
+      "maxWindKt": 155.0,
+      "minPressureMb": 880.0,
+      "category": 5,
+      "trackAsset": "data/tracks/1984294N04163.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "1980277N09157",
+      "name": "Wynne",
+      "season": 1980,
+      "basin": "WP",
+      "subBasin": "MM",
+      "firstTime": "1980-10-02T12:00:00Z",
+      "lastTime": "1980-10-15T18:00:00Z",
+      "peakTime": "1980-10-09T06:00:00Z",
+      "maxWindKt": 150.0,
+      "minPressureMb": 890.0,
+      "category": 5,
+      "trackAsset": "data/tracks/1980277N09157.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "1982120N11083",
+      "name": null,
+      "season": 1982,
+      "basin": "NI",
+      "subBasin": "BB",
+      "firstTime": "1982-04-30T02:00:00Z",
+      "lastTime": "1982-05-05T14:00:00Z",
+      "peakTime": "1982-05-04T06:00:00Z",
+      "maxWindKt": 120.0,
+      "minPressureMb": null,
+      "category": 4,
+      "trackAsset": "data/tracks/1982120N11083.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "1988327N06100",
+      "name": null,
+      "season": 1988,
+      "basin": "NI",
+      "subBasin": "BB",
+      "firstTime": "1988-11-21T18:00:00Z",
+      "lastTime": "1988-11-30T00:00:00Z",
+      "peakTime": "1988-11-29T12:00:00Z",
+      "maxWindKt": 110.0,
+      "minPressureMb": null,
+      "category": 3,
+      "trackAsset": "data/tracks/1988327N06100.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "1989106S11128",
+      "name": "Orson",
+      "season": 1989,
+      "basin": "SI",
+      "subBasin": "WA",
+      "firstTime": "1989-04-16T06:00:00Z",
+      "lastTime": "1989-04-24T12:00:00Z",
+      "peakTime": "1989-04-22T06:00:00Z",
+      "maxWindKt": 140.0,
+      "minPressureMb": 905.0,
+      "category": 5,
+      "trackAsset": "data/tracks/1989106S11128.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "1983339S10065",
+      "name": "Andry",
+      "season": 1984,
+      "basin": "SI",
+      "subBasin": "MM",
+      "firstTime": "1983-12-05T06:00:00Z",
+      "lastTime": "1983-12-16T06:00:00Z",
+      "peakTime": "1983-12-10T12:00:00Z",
+      "maxWindKt": 130.0,
+      "minPressureMb": 927.0,
+      "category": 4,
+      "trackAsset": "data/tracks/1983339S10065.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "1988006S05182",
+      "name": "Anne",
+      "season": 1988,
+      "basin": "SP",
+      "subBasin": "MM",
+      "firstTime": "1988-01-05T12:00:00Z",
+      "lastTime": "1988-01-14T00:00:00Z",
+      "peakTime": "1988-01-11T00:00:00Z",
+      "maxWindKt": 140.0,
+      "minPressureMb": 925.0,
+      "category": 5,
+      "trackAsset": "data/tracks/1988006S05182.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "1985070S17175",
+      "name": "Hina",
+      "season": 1985,
+      "basin": "SP",
+      "subBasin": "MM",
+      "firstTime": "1985-03-11T00:00:00Z",
+      "lastTime": "1985-03-20T12:00:00Z",
+      "peakTime": "1985-03-16T06:00:00Z",
+      "maxWindKt": 135.0,
+      "minPressureMb": 910.0,
+      "category": 4,
+      "trackAsset": "data/tracks/1985070S17175.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "1998295N12284",
+      "name": "Mitch",
+      "season": 1998,
+      "basin": "NA",
+      "subBasin": "CS",
+      "firstTime": "1998-10-22T00:00:00Z",
+      "lastTime": "1998-11-09T18:00:00Z",
+      "peakTime": "1998-10-26T18:00:00Z",
+      "maxWindKt": 155.0,
+      "minPressureMb": 905.0,
+      "category": 5,
+      "trackAsset": "data/tracks/1998295N12284.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "1992230N11325",
+      "name": "Andrew",
+      "season": 1992,
+      "basin": "NA",
+      "subBasin": "NA",
+      "firstTime": "1992-08-16T18:00:00Z",
+      "lastTime": "1992-08-28T06:00:00Z",
+      "peakTime": "1992-08-23T18:00:00Z",
+      "maxWindKt": 150.0,
+      "minPressureMb": 922.0,
+      "category": 5,
+      "trackAsset": "data/tracks/1992230N11325.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "1992318N06182",
+      "name": "Gay",
+      "season": 1992,
+      "basin": "EP",
+      "subBasin": "CP",
+      "firstTime": "1992-11-13T06:00:00Z",
+      "lastTime": "1992-12-04T00:00:00Z",
+      "peakTime": "1992-11-21T00:00:00Z",
+      "maxWindKt": 160.0,
+      "minPressureMb": 900.0,
+      "category": 5,
+      "trackAsset": "data/tracks/1992318N06182.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "1997253N12255",
+      "name": "Linda",
+      "season": 1997,
+      "basin": "EP",
+      "subBasin": "MM",
+      "firstTime": "1997-09-09T12:00:00Z",
+      "lastTime": "1997-09-17T18:00:00Z",
+      "peakTime": "1997-09-12T06:00:00Z",
+      "maxWindKt": 160.0,
+      "minPressureMb": 902.0,
+      "category": 5,
+      "trackAsset": "data/tracks/1997253N12255.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "1997283N07177",
+      "name": "Ivan",
+      "season": 1997,
+      "basin": "WP",
+      "subBasin": "MM",
+      "firstTime": "1997-10-09T12:00:00Z",
+      "lastTime": "1997-10-26T18:00:00Z",
+      "peakTime": "1997-10-17T18:00:00Z",
+      "maxWindKt": 160.0,
+      "minPressureMb": 905.0,
+      "category": 5,
+      "trackAsset": "data/tracks/1997283N07177.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "1997284N04179",
+      "name": "Joan",
+      "season": 1997,
+      "basin": "WP",
+      "subBasin": "MM",
+      "firstTime": "1997-10-11T00:00:00Z",
+      "lastTime": "1997-10-25T18:00:00Z",
+      "peakTime": "1997-10-17T06:00:00Z",
+      "maxWindKt": 160.0,
+      "minPressureMb": 905.0,
+      "category": 5,
+      "trackAsset": "data/tracks/1997284N04179.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "1991113N10091",
+      "name": null,
+      "season": 1991,
+      "basin": "NI",
+      "subBasin": "BB",
+      "firstTime": "1991-04-22T18:00:00Z",
+      "lastTime": "1991-04-30T18:00:00Z",
+      "peakTime": "1991-04-29T12:00:00Z",
+      "maxWindKt": 140.0,
+      "minPressureMb": 918.0,
+      "category": 5,
+      "trackAsset": "data/tracks/1991113N10091.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "1999298N12099",
+      "name": null,
+      "season": 1999,
+      "basin": "NI",
+      "subBasin": "BB",
+      "firstTime": "1999-10-25T00:00:00Z",
+      "lastTime": "1999-11-03T06:00:00Z",
+      "peakTime": "1999-10-28T18:00:00Z",
+      "maxWindKt": 140.0,
+      "minPressureMb": 912.0,
+      "category": 5,
+      "trackAsset": "data/tracks/1999298N12099.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "1995319S05092",
+      "name": "Agnielle:Daryl",
+      "season": 1996,
+      "basin": "SI",
+      "subBasin": "WA",
+      "firstTime": "1995-11-15T00:00:00Z",
+      "lastTime": "1995-11-27T06:00:00Z",
+      "peakTime": "1995-11-21T06:00:00Z",
+      "maxWindKt": 150.0,
+      "minPressureMb": 925.0,
+      "category": 5,
+      "trackAsset": "data/tracks/1995319S05092.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "1994026S11078",
+      "name": "Geralda",
+      "season": 1994,
+      "basin": "SI",
+      "subBasin": "MM",
+      "firstTime": "1994-01-25T12:00:00Z",
+      "lastTime": "1994-02-09T12:00:00Z",
+      "peakTime": "1994-01-31T06:00:00Z",
+      "maxWindKt": 145.0,
+      "minPressureMb": 905.0,
+      "category": 5,
+      "trackAsset": "data/tracks/1994026S11078.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "1998001S09195",
+      "name": "Ron",
+      "season": 1998,
+      "basin": "SP",
+      "subBasin": "MM",
+      "firstTime": "1998-01-01T06:00:00Z",
+      "lastTime": "1998-01-09T00:00:00Z",
+      "peakTime": "1998-01-05T12:00:00Z",
+      "maxWindKt": 145.0,
+      "minPressureMb": 900.0,
+      "category": 5,
+      "trackAsset": "data/tracks/1998001S09195.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "1992064S10184",
+      "name": "Fran",
+      "season": 1992,
+      "basin": "SP",
+      "subBasin": "MM",
+      "firstTime": "1992-03-04T00:00:00Z",
+      "lastTime": "1992-03-21T00:00:00Z",
+      "peakTime": "1992-03-08T18:00:00Z",
+      "maxWindKt": 140.0,
+      "minPressureMb": 920.0,
+      "category": 5,
+      "trackAsset": "data/tracks/1992064S10184.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "2005289N18282",
+      "name": "Wilma",
+      "season": 2005,
+      "basin": "NA",
+      "subBasin": "CS",
+      "firstTime": "2005-10-15T18:00:00Z",
+      "lastTime": "2005-10-26T18:00:00Z",
+      "peakTime": "2005-10-19T12:00:00Z",
+      "maxWindKt": 160.0,
+      "minPressureMb": 882.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2005289N18282.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "2005261N21290",
+      "name": "Rita",
+      "season": 2005,
+      "basin": "NA",
+      "subBasin": "NA",
+      "firstTime": "2005-09-18T00:00:00Z",
+      "lastTime": "2005-09-26T06:00:00Z",
+      "peakTime": "2005-09-22T03:00:00Z",
+      "maxWindKt": 155.0,
+      "minPressureMb": 895.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2005261N21290.json",
+      "imagery": {
+        "status": "processed",
+        "source": "NOAA/NCEI HURSAT-B1 v06",
+        "channel": "infrared window brightness temperature (IRWIN)",
+        "startTime": "2005-09-22T00:00:00Z",
+        "endTime": "2005-09-22T06:00:00Z",
+        "frameCount": 3,
+        "thumbnail": "data/imagery/rita/rita-0300.png",
+        "spriteSheet": "data/imagery/rita/rita-sprite.png",
+        "frameMetadata": "data/imagery/rita/metadata.json"
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA/NCEI HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "2009288N07267",
+      "name": "Rick",
+      "season": 2009,
+      "basin": "EP",
+      "subBasin": "MM",
+      "firstTime": "2009-10-14T12:00:00Z",
+      "lastTime": "2009-10-21T20:00:00Z",
+      "peakTime": "2009-10-18T06:00:00Z",
+      "maxWindKt": 155.0,
+      "minPressureMb": 906.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2009288N07267.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "2002295N11261",
+      "name": "Kenna",
+      "season": 2002,
+      "basin": "EP",
+      "subBasin": "MM",
+      "firstTime": "2002-10-22T00:00:00Z",
+      "lastTime": "2002-10-26T00:00:00Z",
+      "peakTime": "2002-10-25T00:00:00Z",
+      "maxWindKt": 145.0,
+      "minPressureMb": 913.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2002295N11261.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "2000125N06136",
+      "name": "Damrey",
+      "season": 2000,
+      "basin": "WP",
+      "subBasin": "MM",
+      "firstTime": "2000-05-03T18:00:00Z",
+      "lastTime": "2000-05-16T18:00:00Z",
+      "peakTime": "2000-05-09T18:00:00Z",
+      "maxWindKt": 155.0,
+      "minPressureMb": 930.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2000125N06136.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "2001347N04162",
+      "name": "Faxai",
+      "season": 2001,
+      "basin": "WP",
+      "subBasin": "MM",
+      "firstTime": "2001-12-13T06:00:00Z",
+      "lastTime": "2001-12-26T12:00:00Z",
+      "peakTime": "2001-12-23T00:00:00Z",
+      "maxWindKt": 155.0,
+      "minPressureMb": 879.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2001347N04162.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "2007151N14072",
+      "name": "Gonu",
+      "season": 2007,
+      "basin": "NI",
+      "subBasin": "AS",
+      "firstTime": "2007-05-31T06:00:00Z",
+      "lastTime": "2007-06-08T00:00:00Z",
+      "peakTime": "2007-06-04T12:00:00Z",
+      "maxWindKt": 145.0,
+      "minPressureMb": 898.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2007151N14072.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "2007314N10093",
+      "name": "Sidr",
+      "season": 2007,
+      "basin": "NI",
+      "subBasin": "BB",
+      "firstTime": "2007-11-10T06:00:00Z",
+      "lastTime": "2007-11-16T03:00:00Z",
+      "peakTime": "2007-11-14T18:00:00Z",
+      "maxWindKt": 140.0,
+      "minPressureMb": 918.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2007314N10093.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "2002063S11066",
+      "name": "Hary",
+      "season": 2002,
+      "basin": "SI",
+      "subBasin": "MM",
+      "firstTime": "2002-03-03T12:00:00Z",
+      "lastTime": "2002-03-17T12:00:00Z",
+      "peakTime": "2002-03-10T00:00:00Z",
+      "maxWindKt": 140.0,
+      "minPressureMb": 898.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2002063S11066.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "2003062S10080",
+      "name": "Kalunde",
+      "season": 2003,
+      "basin": "SI",
+      "subBasin": "MM",
+      "firstTime": "2003-03-03T06:00:00Z",
+      "lastTime": "2003-03-17T06:00:00Z",
+      "peakTime": "2003-03-08T06:00:00Z",
+      "maxWindKt": 140.0,
+      "minPressureMb": 898.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2003062S10080.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "2002358S08185",
+      "name": "Zoe",
+      "season": 2003,
+      "basin": "SP",
+      "subBasin": "MM",
+      "firstTime": "2002-12-23T18:00:00Z",
+      "lastTime": "2003-01-04T12:00:00Z",
+      "peakTime": "2002-12-27T12:00:00Z",
+      "maxWindKt": 155.0,
+      "minPressureMb": 879.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2002358S08185.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "2006106S10153",
+      "name": "Monica",
+      "season": 2006,
+      "basin": "SP",
+      "subBasin": "EA",
+      "firstTime": "2006-04-16T00:00:00Z",
+      "lastTime": "2006-04-27T18:00:00Z",
+      "peakTime": "2006-04-23T12:00:00Z",
+      "maxWindKt": 155.0,
+      "minPressureMb": 879.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2006106S10153.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "2019236N10314",
+      "name": "Dorian",
+      "season": 2019,
+      "basin": "NA",
+      "subBasin": "NA",
+      "firstTime": "2019-08-24T06:00:00Z",
+      "lastTime": "2019-09-09T00:00:00Z",
+      "peakTime": "2019-09-01T16:40:00Z",
+      "maxWindKt": 160.0,
+      "minPressureMb": 910.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2019236N10314.json",
+      "imagery": {
+        "status": "outside-current-collection",
+        "source": null,
+        "channel": null,
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": null
+      }
+    },
+    {
+      "id": "2017242N16333",
+      "name": "Irma",
+      "season": 2017,
+      "basin": "NA",
+      "subBasin": "NA",
+      "firstTime": "2017-08-30T00:00:00Z",
+      "lastTime": "2017-09-13T12:00:00Z",
+      "peakTime": "2017-09-05T18:00:00Z",
+      "maxWindKt": 155.0,
+      "minPressureMb": 914.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2017242N16333.json",
+      "imagery": {
+        "status": "outside-current-collection",
+        "source": null,
+        "channel": null,
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": null
+      }
+    },
+    {
+      "id": "2015293N13266",
+      "name": "Patricia",
+      "season": 2015,
+      "basin": "EP",
+      "subBasin": "MM",
+      "firstTime": "2015-10-20T06:00:00Z",
+      "lastTime": "2015-10-24T12:00:00Z",
+      "peakTime": "2015-10-23T12:00:00Z",
+      "maxWindKt": 185.0,
+      "minPressureMb": 872.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2015293N13266.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "2010169N13266",
+      "name": "Celia",
+      "season": 2010,
+      "basin": "EP",
+      "subBasin": "MM",
+      "firstTime": "2010-06-18T06:00:00Z",
+      "lastTime": "2010-06-30T12:00:00Z",
+      "peakTime": "2010-06-25T00:00:00Z",
+      "maxWindKt": 140.0,
+      "minPressureMb": 921.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2010169N13266.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "2013306N07162",
+      "name": "Haiyan",
+      "season": 2013,
+      "basin": "WP",
+      "subBasin": "MM",
+      "firstTime": "2013-11-02T06:00:00Z",
+      "lastTime": "2013-11-11T12:00:00Z",
+      "peakTime": "2013-11-07T12:00:00Z",
+      "maxWindKt": 170.0,
+      "minPressureMb": 895.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2013306N07162.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "2016253N13144",
+      "name": "Meranti",
+      "season": 2016,
+      "basin": "WP",
+      "subBasin": "MM",
+      "firstTime": "2016-09-08T18:00:00Z",
+      "lastTime": "2016-09-17T12:00:00Z",
+      "peakTime": "2016-09-13T12:00:00Z",
+      "maxWindKt": 170.0,
+      "minPressureMb": 895.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2016253N13144.json",
+      "imagery": {
+        "status": "outside-current-collection",
+        "source": null,
+        "channel": null,
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": null
+      }
+    },
+    {
+      "id": "2019116N02090",
+      "name": "Fani",
+      "season": 2019,
+      "basin": "NI",
+      "subBasin": "BB",
+      "firstTime": "2019-04-25T18:00:00Z",
+      "lastTime": "2019-05-04T12:00:00Z",
+      "peakTime": "2019-05-02T12:00:00Z",
+      "maxWindKt": 150.0,
+      "minPressureMb": 900.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2019116N02090.json",
+      "imagery": {
+        "status": "outside-current-collection",
+        "source": null,
+        "channel": null,
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": null
+      }
+    },
+    {
+      "id": "2013281N12098",
+      "name": "Phailin",
+      "season": 2013,
+      "basin": "NI",
+      "subBasin": "BB",
+      "firstTime": "2013-10-07T12:00:00Z",
+      "lastTime": "2013-10-14T06:00:00Z",
+      "peakTime": "2013-10-11T12:00:00Z",
+      "maxWindKt": 140.0,
+      "minPressureMb": 918.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2013281N12098.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "2016102S12074",
+      "name": "Fantala",
+      "season": 2016,
+      "basin": "SI",
+      "subBasin": "MM",
+      "firstTime": "2016-04-10T18:00:00Z",
+      "lastTime": "2016-04-26T18:00:00Z",
+      "peakTime": "2016-04-18T00:00:00Z",
+      "maxWindKt": 155.0,
+      "minPressureMb": 907.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2016102S12074.json",
+      "imagery": {
+        "status": "outside-current-collection",
+        "source": null,
+        "channel": null,
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": null
+      }
+    },
+    {
+      "id": "2018073S09129",
+      "name": "Marcus",
+      "season": 2018,
+      "basin": "SI",
+      "subBasin": "WA",
+      "firstTime": "2018-03-14T00:00:00Z",
+      "lastTime": "2018-03-25T00:00:00Z",
+      "peakTime": "2018-03-21T18:00:00Z",
+      "maxWindKt": 150.0,
+      "minPressureMb": 906.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2018073S09129.json",
+      "imagery": {
+        "status": "outside-current-collection",
+        "source": null,
+        "channel": null,
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": null
+      }
+    },
+    {
+      "id": "2016041S14170",
+      "name": "Winston",
+      "season": 2016,
+      "basin": "SP",
+      "subBasin": "MM",
+      "firstTime": "2016-02-09T18:00:00Z",
+      "lastTime": "2016-02-28T12:00:00Z",
+      "peakTime": "2016-02-20T06:00:00Z",
+      "maxWindKt": 155.0,
+      "minPressureMb": 907.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2016041S14170.json",
+      "imagery": {
+        "status": "outside-current-collection",
+        "source": null,
+        "channel": null,
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": null
+      }
+    },
+    {
+      "id": "2015066S08170",
+      "name": "Pam",
+      "season": 2015,
+      "basin": "SP",
+      "subBasin": "MM",
+      "firstTime": "2015-03-07T06:00:00Z",
+      "lastTime": "2015-03-20T00:00:00Z",
+      "peakTime": "2015-03-13T06:00:00Z",
+      "maxWindKt": 150.0,
+      "minPressureMb": 911.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2015066S08170.json",
+      "imagery": {
+        "status": "uncertain",
+        "source": "NOAA HURSAT-B1 v06",
+        "channel": "infrared",
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": "NOAA HURSAT-B1 v06"
+      }
+    },
+    {
+      "id": "2025294N14290",
+      "name": "Melissa",
+      "season": 2025,
+      "basin": "NA",
+      "subBasin": "CS",
+      "firstTime": "2025-10-21T06:00:00Z",
+      "lastTime": "2025-11-01T06:00:00Z",
+      "peakTime": "2025-10-28T12:00:00Z",
+      "maxWindKt": 165.0,
+      "minPressureMb": 892.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2025294N14290.json",
+      "imagery": {
+        "status": "outside-current-collection",
+        "source": null,
+        "channel": null,
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": null
+      }
+    },
+    {
+      "id": "2024279N21265",
+      "name": "Milton",
+      "season": 2024,
+      "basin": "NA",
+      "subBasin": "GM",
+      "firstTime": "2024-10-04T18:00:00Z",
+      "lastTime": "2024-10-11T18:00:00Z",
+      "peakTime": "2024-10-07T20:00:00Z",
+      "maxWindKt": 155.0,
+      "minPressureMb": 895.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2024279N21265.json",
+      "imagery": {
+        "status": "outside-current-collection",
+        "source": null,
+        "channel": null,
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": null
+      }
+    },
+    {
+      "id": "2023294N09264",
+      "name": "Otis",
+      "season": 2023,
+      "basin": "EP",
+      "subBasin": "MM",
+      "firstTime": "2023-10-21T00:00:00Z",
+      "lastTime": "2023-10-25T18:00:00Z",
+      "peakTime": "2023-10-25T03:00:00Z",
+      "maxWindKt": 145.0,
+      "minPressureMb": 922.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2023294N09264.json",
+      "imagery": {
+        "status": "outside-current-collection",
+        "source": null,
+        "channel": null,
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": null
+      }
+    },
+    {
+      "id": "2023248N12257",
+      "name": "Jova",
+      "season": 2023,
+      "basin": "EP",
+      "subBasin": "MM",
+      "firstTime": "2023-09-04T12:00:00Z",
+      "lastTime": "2023-09-14T00:00:00Z",
+      "peakTime": "2023-09-07T00:00:00Z",
+      "maxWindKt": 140.0,
+      "minPressureMb": 926.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2023248N12257.json",
+      "imagery": {
+        "status": "outside-current-collection",
+        "source": null,
+        "channel": null,
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": null
+      }
+    },
+    {
+      "id": "2020299N11144",
+      "name": "Goni",
+      "season": 2020,
+      "basin": "WP",
+      "subBasin": "MM",
+      "firstTime": "2020-10-25T06:00:00Z",
+      "lastTime": "2020-11-06T06:00:00Z",
+      "peakTime": "2020-10-31T18:00:00Z",
+      "maxWindKt": 170.0,
+      "minPressureMb": 884.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2020299N11144.json",
+      "imagery": {
+        "status": "outside-current-collection",
+        "source": null,
+        "channel": null,
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": null
+      }
+    },
+    {
+      "id": "2021102N06144",
+      "name": "Surigae",
+      "season": 2021,
+      "basin": "WP",
+      "subBasin": "MM",
+      "firstTime": "2021-04-11T12:00:00Z",
+      "lastTime": "2021-04-30T18:00:00Z",
+      "peakTime": "2021-04-17T12:00:00Z",
+      "maxWindKt": 170.0,
+      "minPressureMb": 882.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2021102N06144.json",
+      "imagery": {
+        "status": "outside-current-collection",
+        "source": null,
+        "channel": null,
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": null
+      }
+    },
+    {
+      "id": "2020136N10088",
+      "name": "Amphan",
+      "season": 2020,
+      "basin": "NI",
+      "subBasin": "BB",
+      "firstTime": "2020-05-15T06:00:00Z",
+      "lastTime": "2020-05-21T12:00:00Z",
+      "peakTime": "2020-05-18T12:00:00Z",
+      "maxWindKt": 145.0,
+      "minPressureMb": 901.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2020136N10088.json",
+      "imagery": {
+        "status": "outside-current-collection",
+        "source": null,
+        "channel": null,
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": null
+      }
+    },
+    {
+      "id": "2023129N08091",
+      "name": "Mocha",
+      "season": 2023,
+      "basin": "NI",
+      "subBasin": "BB",
+      "firstTime": "2023-05-08T18:00:00Z",
+      "lastTime": "2023-05-15T00:00:00Z",
+      "peakTime": "2023-05-14T00:00:00Z",
+      "maxWindKt": 145.0,
+      "minPressureMb": 908.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2023129N08091.json",
+      "imagery": {
+        "status": "outside-current-collection",
+        "source": null,
+        "channel": null,
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": null
+      }
+    },
+    {
+      "id": "2019337S04065",
+      "name": "Ambali",
+      "season": 2020,
+      "basin": "SI",
+      "subBasin": "MM",
+      "firstTime": "2019-12-03T06:00:00Z",
+      "lastTime": "2019-12-09T06:00:00Z",
+      "peakTime": "2019-12-06T00:00:00Z",
+      "maxWindKt": 140.0,
+      "minPressureMb": 918.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2019337S04065.json",
+      "imagery": {
+        "status": "outside-current-collection",
+        "source": null,
+        "channel": null,
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": null
+      }
+    },
+    {
+      "id": "2021035S11080",
+      "name": "Faraji",
+      "season": 2021,
+      "basin": "SI",
+      "subBasin": "MM",
+      "firstTime": "2021-02-04T00:00:00Z",
+      "lastTime": "2021-02-16T06:00:00Z",
+      "peakTime": "2021-02-08T18:00:00Z",
+      "maxWindKt": 140.0,
+      "minPressureMb": 920.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2021035S11080.json",
+      "imagery": {
+        "status": "outside-current-collection",
+        "source": null,
+        "channel": null,
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": null
+      }
+    },
+    {
+      "id": "2020092S09155",
+      "name": "Harold",
+      "season": 2020,
+      "basin": "SP",
+      "subBasin": "EA",
+      "firstTime": "2020-04-01T00:00:00Z",
+      "lastTime": "2020-04-11T00:00:00Z",
+      "peakTime": "2020-04-06T06:00:00Z",
+      "maxWindKt": 145.0,
+      "minPressureMb": 909.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2020092S09155.json",
+      "imagery": {
+        "status": "outside-current-collection",
+        "source": null,
+        "channel": null,
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": null
+      }
+    },
+    {
+      "id": "2020346S13168",
+      "name": "Yasa",
+      "season": 2021,
+      "basin": "SP",
+      "subBasin": "MM",
+      "firstTime": "2020-12-11T06:00:00Z",
+      "lastTime": "2020-12-21T06:00:00Z",
+      "peakTime": "2020-12-16T00:00:00Z",
+      "maxWindKt": 140.0,
+      "minPressureMb": 914.0,
+      "category": 5,
+      "trackAsset": "data/tracks/2020346S13168.json",
+      "imagery": {
+        "status": "outside-current-collection",
+        "source": null,
+        "channel": null,
+        "frameCount": 0
+      },
+      "provenance": {
+        "trackSource": "NOAA/NCEI IBTrACS",
+        "trackVersion": "v04r01",
+        "imagerySource": null
+      }
+    }
+  ]
+}

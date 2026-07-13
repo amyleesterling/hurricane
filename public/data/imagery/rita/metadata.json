@@ -1,0 +1,24 @@
+{
+  "stormId": "2005261N21290",
+  "stormName": "Rita",
+  "source": "NOAA/NCEI HURSAT-B1 v06",
+  "sourceUrl": "https://www.ncei.noaa.gov/data/hurricane-satellite-hursat-b1/archive/v06/2005/HURSAT_b1_v06_2005261N21290_RITA_c20170721.tar.gz",
+  "sourceArchiveSha256": "b07c44bbcaa05cf4892fb4076e200a41fd6df9557b9ce5d7aaf395e6a9829580",
+  "channel": "IRWIN",
+  "quantity": "infrared window brightness temperature",
+  "units": "Kelvin",
+  "timesUtc": [
+    "2005-09-22T00:00:00Z",
+    "2005-09-22T03:00:00Z",
+    "2005-09-22T06:00:00Z"
+  ],
+  "transform": {
+    "description": "linear inverted grayscale false-color mapping",
+    "inputRangeKelvin": [180, 300],
+    "outputRange": [255, 0],
+    "missingValueKelvin": 300
+  },
+  "grid": { "width": 301, "height": 301, "orientation": "north-up" },
+  "reviewed": true,
+  "authenticSatelliteData": true
+}
