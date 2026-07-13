@@ -1,0 +1,9 @@
+# Scientific caveats
+
+- Agency practices, averaging periods, and intensity estimates differ across basins and eras.
+- Best-track records are retrospective analyses and contain uncertainty.
+- Satellite coverage, resolution, channels, calibration, and archival survival change through time.
+- Older archives are incomplete; “not yet located” does not mean no image exists.
+- Storm-centered imagery may be interpolated, centered, and resampled.
+- Infrared palettes map measured brightness temperatures; they are not natural-color photographs.
+- The 60-storm demo is deliberately representative, not climatologically complete.
