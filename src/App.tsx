@@ -658,10 +658,10 @@ function StormReconstruction({
       <canvas
         ref={canvasRef}
         style={{ opacity }}
-        aria-label={`Visual reconstruction of ${storm.name || storm.id} based on track and intensity; not satellite data`}
+        aria-label={`Visual reconstruction of ${storm.name || storm.id} based on recorded intensity; not satellite data`}
       />
       <figcaption>
-        VISUAL RECONSTRUCTION · TRACK + INTENSITY · NOT SATELLITE DATA
+        VISUAL RECONSTRUCTION · INTENSITY-DERIVED · NOT SATELLITE DATA
       </figcaption>
     </figure>
   );
