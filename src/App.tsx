@@ -12,12 +12,12 @@ import { activeStorms, matchesSearch } from "./utils/stormMath";
 import { manifestSchema } from "./data/schema";
 
 const BASINS: Record<string, string> = {
-  NA: "North Atlantic",
-  EP: "East Pacific",
-  WP: "West Pacific",
-  NI: "North Indian",
-  SI: "South Indian",
-  SP: "South Pacific",
+  NA: "North Atlantic · hurricanes",
+  EP: "Eastern/Central Pacific · hurricanes",
+  WP: "Western Pacific · typhoons",
+  NI: "North Indian · cyclones",
+  SI: "South Indian · cyclones",
+  SP: "South Pacific · cyclones",
   SA: "South Atlantic",
 };
 const MODES: { id: AppMode; label: string }[] = [
@@ -45,7 +45,9 @@ export default function App() {
   const store = useStore();
   const setStore = useStore((state) => state.set);
   const [manifest, setManifest] = useState<Manifest | null>(null);
-  const [tracks, setTracks] = useState<Map<string, TrackPoint[]>>(new Map());
+  const [detailedTracks, setDetailedTracks] = useState<
+    Map<string, TrackPoint[]>
+  >(new Map());
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [about, setAbout] = useState(false);
   const [onboarding, setOnboarding] = useState(
@@ -61,18 +63,31 @@ export default function App() {
       })
       .catch(console.error);
   }, []);
-  useEffect(() => {
-    if (!manifest) return;
-    Promise.all(
-      manifest.storms.map(
-        async (s) =>
-          [
-            s.id,
-            await fetch(`${base}${s.trackAsset}`).then((r) => r.json()),
-          ] as const,
+  const previewTracks = useMemo(
+    () =>
+      new Map(
+        (manifest?.storms || []).map((storm) => [
+          storm.id,
+          storm.previewTrack.map(
+            ([epochSeconds, lat, lon, wind, category]): TrackPoint => ({
+              t: new Date(epochSeconds * 1000).toISOString(),
+              lat,
+              lon,
+              wind,
+              pressure: null,
+              status: null,
+              category,
+            }),
+          ),
+        ]),
       ),
-    ).then((x) => setTracks(new Map(x)));
-  }, [manifest]);
+    [manifest],
+  );
+  const tracks = useMemo(() => {
+    const merged = new Map(previewTracks);
+    detailedTracks.forEach((track, id) => merged.set(id, track));
+    return merged;
+  }, [previewTracks, detailedTracks]);
   const filtered = useMemo(
     () =>
       manifest?.storms.filter(
@@ -109,6 +124,56 @@ export default function App() {
   );
   const selected =
     manifest?.storms.find((s) => s.id === store.selectedId) || null;
+  const sceneStorms = useMemo(() => {
+    if (store.mode === "lives") return visible;
+    const currentYear = new Date(store.time).getUTCFullYear();
+    const current = visible.filter((storm) => storm.season === currentYear);
+    if (selected && !current.some((storm) => storm.id === selected.id)) {
+      current.push(selected);
+    }
+    return current;
+  }, [selected, store.mode, store.time, visible]);
+  const [archiveStart, archiveEnd] = useMemo(() => {
+    if (!manifest?.storms.length)
+      return [Date.parse("1980-01-01"), Date.parse("2026-12-31")];
+    return manifest.storms.reduce(
+      ([start, end], storm) => [
+        Math.min(start, Date.parse(storm.firstTime)),
+        Math.max(end, Date.parse(storm.lastTime)),
+      ],
+      [Number.POSITIVE_INFINITY, Number.NEGATIVE_INFINITY],
+    );
+  }, [manifest]);
+  useEffect(() => {
+    if (!manifest) return;
+    const needed = new Set(active.map((storm) => storm.id));
+    if (store.selectedId) needed.add(store.selectedId);
+    const missing = [...needed]
+      .filter((id) => !detailedTracks.has(id))
+      .map((id) => manifest.storms.find((storm) => storm.id === id))
+      .filter((storm): storm is StormSummary => Boolean(storm));
+    if (!missing.length) return;
+    let cancelled = false;
+    Promise.all(
+      missing.map(async (storm) => {
+        const response = await fetch(`${base}${storm.trackAsset}`);
+        if (!response.ok) throw new Error(`Track load failed: ${storm.id}`);
+        return [storm.id, (await response.json()) as TrackPoint[]] as const;
+      }),
+    )
+      .then((entries) => {
+        if (cancelled) return;
+        setDetailedTracks((current) => {
+          const next = new Map(current);
+          entries.forEach(([id, track]) => next.set(id, track));
+          return next;
+        });
+      })
+      .catch(console.error);
+    return () => {
+      cancelled = true;
+    };
+  }, [active, detailedTracks, manifest, store.selectedId]);
   const select = useCallback(
     (id: string) => setStore({ selectedId: id }),
     [setStore],
@@ -147,9 +212,7 @@ export default function App() {
         store.set({ lifecycle: n > 1 ? 0 : n });
       } else {
         const n = store.time + dt * store.speed * 86400000;
-        store.set({
-          time: n > Date.parse("2025-12-31") ? Date.parse("1980-01-01") : n,
-        });
+        store.set({ time: n > archiveEnd ? archiveStart : n });
       }
       raf = requestAnimationFrame(tick);
     };
@@ -162,6 +225,8 @@ export default function App() {
     store.lifecycle,
     store.time,
     store,
+    archiveStart,
+    archiveEnd,
   ]);
   const setMode = (mode: AppMode) => store.set({ mode, playing: false });
   if (!manifest)
@@ -175,7 +240,7 @@ export default function App() {
     <main className="app">
       {store.mode !== "portrait" && (
         <StormGlobe
-          storms={visible}
+          storms={sceneStorms}
           tracks={tracks}
           time={store.time}
           lifecycle={store.lifecycle}
@@ -190,11 +255,15 @@ export default function App() {
       <div className="vignette" aria-hidden="true" />
       <header className="masthead">
         <div>
-          <p className="eyebrow">A planetary archive · 1980–2025</p>
+          <p className="eyebrow">
+            A global archive · {manifest.totalStorms.toLocaleString()} storms ·
+            seven basins
+          </p>
           <h1>THE STORM CHOIR</h1>
           <p className="subtitle">
             Every tropical cyclone we have learned to see from space.
           </p>
+          <p className="scope-line">Typhoons · hurricanes · cyclones</p>
         </div>
         <nav aria-label="Site">
           <button onClick={() => setAbout(true)}>Methodology</button>
@@ -228,7 +297,7 @@ export default function App() {
           </div>
           <div className="result-line">
             <span>
-              <b>{filtered.length}</b> storm records
+              <b>{filtered.length.toLocaleString()}</b> storm records
             </span>
             <button
               onClick={() => setFiltersOpen(!filtersOpen)}
@@ -364,6 +433,8 @@ export default function App() {
       {store.mode !== "portrait" && (
         <Timeline
           active={store.mode === "historical" ? active.length : filtered.length}
+          minTime={archiveStart}
+          maxTime={archiveEnd}
         />
       )}
       <footer>
@@ -378,16 +449,29 @@ export default function App() {
           }}
         />
       )}
-      {about && <About close={() => setAbout(false)} />}
+      {about && (
+        <About
+          totalStorms={manifest.totalStorms}
+          close={() => setAbout(false)}
+        />
+      )}
     </main>
   );
 }
 
-function Timeline({ active }: { active: number }) {
+function Timeline({
+  active,
+  minTime,
+  maxTime,
+}: {
+  active: number;
+  minTime: number;
+  maxTime: number;
+}) {
   const s = useStore();
   const historical = s.mode !== "lives";
-  const min = Date.parse("1980-01-01"),
-    max = Date.parse("2025-12-31");
+  const maxYear = new Date(maxTime).getUTCFullYear();
+  const timelineYears = [...new Set([...years, maxYear])];
   return (
     <section className="timeline" aria-label="Timeline controls">
       <div className="time-readout">
@@ -429,8 +513,8 @@ function Timeline({ active }: { active: number }) {
           <input
             aria-label="Timeline position"
             type="range"
-            min={historical ? min : 0}
-            max={historical ? max : 1000}
+            min={historical ? minTime : 0}
+            max={historical ? maxTime : 1000}
             value={historical ? s.time : s.lifecycle * 1000}
             onChange={(e) =>
               s.set(
@@ -442,7 +526,7 @@ function Timeline({ active }: { active: number }) {
           />
           <div className="marks">
             {historical
-              ? years.map((y) => <span key={y}>{y}</span>)
+              ? timelineYears.map((y) => <span key={y}>{y}</span>)
               : [0, 25, 50, 75, 100].map((x) => <span key={x}>{x}%</span>)}
           </div>
         </div>
@@ -815,7 +899,13 @@ function Onboarding({ close }: { close: () => void }) {
     </div>
   );
 }
-function About({ close }: { close: () => void }) {
+function About({
+  close,
+  totalStorms,
+}: {
+  close: () => void;
+  totalStorms: number;
+}) {
   return (
     <div className="modal-back">
       <section
@@ -830,9 +920,9 @@ function About({ close }: { close: () => void }) {
         <p className="eyebrow">SCIENTIFIC METHOD</p>
         <h2 id="about">What the archive knows — and does not.</h2>
         <p>
-          The current release is a working exploration prototype using 60 real
-          global cyclone tracks from NOAA/NCEI IBTrACS v04r01. It does not claim
-          a complete imagery archive.
+          The current release includes {totalStorms.toLocaleString()} real
+          since-1980 cyclone tracks across seven global basins from NOAA/NCEI
+          IBTrACS v04r01. It does not claim a complete imagery archive.
         </p>
         <h3>Best tracks are retrospective</h3>
         <p>

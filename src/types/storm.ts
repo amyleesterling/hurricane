@@ -15,6 +15,13 @@ export interface TrackPoint {
   category: number | null;
   agency?: string | null;
 }
+export type PreviewTrackPoint = [
+  epochSeconds: number,
+  latitude: number,
+  longitude: number,
+  windKt: number | null,
+  category: number | null,
+];
 export interface StormSummary {
   id: string;
   name: string | null;
@@ -28,6 +35,7 @@ export interface StormSummary {
   minPressureMb?: number | null;
   category?: number | null;
   trackAsset: string;
+  previewTrack: PreviewTrackPoint[];
   imagery: {
     status: ImageryStatus;
     source?: string | null;
@@ -48,6 +56,8 @@ export interface StormSummary {
 export interface Manifest {
   version: string;
   generatedAt: string;
+  totalStorms: number;
+  basinCounts: Record<BasinCode, number>;
   source: Record<string, string>;
   storms: StormSummary[];
 }

@@ -6,4 +6,4 @@
 - Older archives are incomplete; “not yet located” does not mean no image exists.
 - Storm-centered imagery may be interpolated, centered, and resampled.
 - Infrared palettes map measured brightness temperatures; they are not natural-color photographs.
-- The 60-storm demo is deliberately representative, not climatologically complete.
+- The track archive covers the complete IBTrACS `since1980` subset at generation time, but IBTrACS itself changes as agencies revise best tracks and recent provisional systems mature.

@@ -107,7 +107,7 @@ export default function StormGlobe({
       viewer.scene.imageryLayers.add(layer);
     });
     viewer.camera.setView({
-      destination: Cartesian3.fromDegrees(-32, 18, 19_000_000),
+      destination: Cartesian3.fromDegrees(145, 12, 19_000_000),
       orientation: { heading: 0, pitch: CesiumMath.toRadians(-90), roll: 0 },
     });
     const handler = new ScreenSpaceEventHandler(viewer.scene.canvas);
@@ -151,27 +151,36 @@ export default function StormGlobe({
     const lines = linesRef.current;
     if (!viewer || !lines) return;
     lines.removeAll();
-    storms.forEach((s) => {
+    const trackStride = mode === "lives" ? Math.ceil(storms.length / 700) : 1;
+    storms.forEach((s, stormIndex) => {
+      if (
+        trackStride > 1 &&
+        stormIndex % trackStride !== 0 &&
+        s.id !== selectedId
+      )
+        return;
       const track = tracks.get(s.id);
       if (!track?.length) return;
       const selected = s.id === selectedId;
-      segmentAntimeridian(track).forEach((segment) =>
-        lines.add({
-          positions: segment.map((p) =>
-            Cartesian3.fromDegrees(p.lon, p.lat, selected ? 8000 : 2500),
-          ),
-          width: selected ? 2.8 : 0.75,
-          material: Material.fromType("Color", {
-            color: selected
-              ? Color.fromCssColorString("#c8f7ff").withAlpha(0.85)
-              : Color.fromCssColorString("#90a6ab").withAlpha(0.22),
+      segmentAntimeridian(track)
+        .filter((segment) => segment.length >= 2)
+        .forEach((segment) =>
+          lines.add({
+            positions: segment.map((p) =>
+              Cartesian3.fromDegrees(p.lon, p.lat, selected ? 8000 : 2500),
+            ),
+            width: selected ? 2.8 : 0.75,
+            material: Material.fromType("Color", {
+              color: selected
+                ? Color.fromCssColorString("#c8f7ff").withAlpha(0.85)
+                : Color.fromCssColorString("#90a6ab").withAlpha(0.13),
+            }),
+            id: s.id,
           }),
-          id: s.id,
-        }),
-      );
+        );
     });
     viewer.scene.requestRender();
-  }, [storms, tracks, selectedId]);
+  }, [storms, tracks, selectedId, mode]);
 
   useEffect(() => {
     const viewer = viewerRef.current;

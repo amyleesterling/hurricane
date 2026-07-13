@@ -64,4 +64,9 @@ describe("storm math", () => {
     expect(matchesSearch(s, "alpha")).toBe(true);
     expect(matchesSearch(s, "2019")).toBe(false);
   });
+  it("searches regional cyclone terminology", () => {
+    expect(matchesSearch({ ...s, basin: "WP" }, "typhoon")).toBe(true);
+    expect(matchesSearch({ ...s, basin: "SI" }, "cyclone")).toBe(true);
+    expect(matchesSearch(s, "hurricane")).toBe(true);
+  });
 });

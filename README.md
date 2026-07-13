@@ -8,12 +8,13 @@ The Storm Choir is a cinematic, scientific 3D atlas of tropical cyclone lives ac
 
 ![The Storm Choir interface](docs/screenshot.png)
 
-> The current release is a working exploration prototype using a representative subset of global cyclone tracks and a growing collection of processed satellite imagery. The long-term goal is to assemble the broadest feasible public visual archive of tropical cyclones observed from space.
+> The current release is a working exploration prototype using the complete since-1980 IBTrACS global cyclone collection and a growing set of processed satellite imagery. The long-term goal is to assemble the broadest feasible public visual archive of tropical cyclones observed from space.
 
 ## Current release
 
 - Token-free CesiumJS globe with self-hosted Natural Earth II base imagery
-- 60 real, processed IBTrACS v04r01 cyclone tracks spanning six basins and five decades
+- 4,943 real IBTrACS v04r01 tropical-cyclone records across seven basins, including Western Pacific typhoons and Indian/Southern Hemisphere cyclones
+- Compact overview tracks on first load with full-resolution observations fetched only for active or selected storms
 - Historical Sky, All Lives at Once, Humanity's Eyes, and virtualized Great Portrait modes
 - UTC playback, lifecycle scrubbing, filtering, search, selection, details, and shareable URL state
 - One reviewed authentic NOAA HURSAT-B1 Rita sequence (three infrared frames), plus honest five-state imagery metadata

@@ -20,7 +20,7 @@ def main() -> None:
         "frameMetadata": "data/imagery/rita/metadata.json",
     }
     storm["provenance"]["imagerySource"] = "NOAA/NCEI HURSAT-B1 v06"
-    MANIFEST.write_text(json.dumps(data, indent=2) + "\n")
+    MANIFEST.write_text(json.dumps(data, separators=(",", ":")))
     print("Registered 1 authentic sequence / 3 frames for 2005261N21290 Rita")
 
 if __name__ == "__main__":

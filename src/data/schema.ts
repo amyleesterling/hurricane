@@ -8,6 +8,17 @@ export const stormSchema = z
     firstTime: z.iso.datetime(),
     lastTime: z.iso.datetime(),
     trackAsset: z.string(),
+    previewTrack: z
+      .array(
+        z.tuple([
+          z.number().int(),
+          z.number(),
+          z.number(),
+          z.number().nullable(),
+          z.number().nullable(),
+        ]),
+      )
+      .min(1),
     imagery: z
       .object({
         status: z.enum([
@@ -26,6 +37,8 @@ export const manifestSchema = z
   .object({
     version: z.string(),
     generatedAt: z.iso.datetime(),
+    totalStorms: z.number().int().min(4900),
+    basinCounts: z.record(z.string(), z.number().int()),
     storms: z.array(stormSchema).min(1),
   })
   .passthrough();

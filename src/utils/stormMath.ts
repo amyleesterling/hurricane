@@ -86,10 +86,23 @@ export function segmentAntimeridian(points: TrackPoint[]) {
 }
 export function matchesSearch(s: StormSummary, q: string) {
   const n = q.trim().toLowerCase();
+  const regionalTerms: Record<string, string[]> = {
+    NA: ["hurricane", "atlantic"],
+    EP: ["hurricane", "eastern pacific", "central pacific"],
+    WP: ["typhoon", "western pacific"],
+    NI: ["cyclone", "north indian"],
+    SI: ["cyclone", "south indian"],
+    SP: ["cyclone", "south pacific"],
+    SA: ["cyclone", "south atlantic"],
+  };
   return (
     !n ||
-    [s.name ?? "unnamed", s.id, s.season.toString(), s.basin].some((v) =>
-      v.toLowerCase().includes(n),
-    )
+    [
+      s.name ?? "unnamed",
+      s.id,
+      s.season.toString(),
+      s.basin,
+      ...(regionalTerms[s.basin] || []),
+    ].some((v) => v.toLowerCase().includes(n))
   );
 }

@@ -77,6 +77,13 @@ a {
   margin: 6px 0;
   color: #afbfbd;
 }
+.scope-line {
+  margin: 8px 0 0;
+  color: #7f9998;
+  font: 500 8px DM Mono;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
 .masthead nav {
   display: flex;
   gap: 22px;
