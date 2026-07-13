@@ -59,9 +59,13 @@ export default function StormGlobe({
 }: Props) {
   const host = useRef<HTMLDivElement>(null);
   const viewerRef = useRef<Viewer | null>(null);
+  const linesRef = useRef<PolylineCollection | null>(null);
+  const pointsRef = useRef<PointPrimitiveCollection | null>(null);
+  const hoveredIdRef = useRef<string | null>(null);
   const interacted = useRef(false);
   useEffect(() => {
     if (!host.current || viewerRef.current) return;
+    let disposed = false;
     if (import.meta.env.VITE_CESIUM_ION_TOKEN)
       Ion.defaultAccessToken = import.meta.env.VITE_CESIUM_ION_TOKEN;
     const viewer = new Viewer(host.current, {
@@ -80,6 +84,10 @@ export default function StormGlobe({
       requestRenderMode: false,
     });
     viewerRef.current = viewer;
+    linesRef.current = viewer.scene.primitives.add(new PolylineCollection());
+    pointsRef.current = viewer.scene.primitives.add(
+      new PointPrimitiveCollection(),
+    );
     viewer.scene.globe.baseColor = Color.fromCssColorString("#071316");
     viewer.scene.backgroundColor = Color.fromCssColorString("#020406");
     if (viewer.scene.skyAtmosphere)
@@ -91,6 +99,7 @@ export default function StormGlobe({
     TileMapServiceImageryProvider.fromUrl(
       buildModuleUrl("Assets/Textures/NaturalEarthII"),
     ).then((provider) => {
+      if (disposed || viewer.isDestroyed()) return;
       const layer = new ImageryLayer(provider);
       layer.brightness = 0.38;
       layer.contrast = 1.35;
@@ -114,31 +123,34 @@ export default function StormGlobe({
     }, ScreenSpaceEventType.LEFT_CLICK);
     handler.setInputAction((movement: { endPosition: Cartesian2 }) => {
       const picked = viewer.scene.pick(movement.endPosition);
-      onHover(
-        defined(picked) && typeof picked.id === "string" ? picked.id : null,
-      );
+      const nextId =
+        defined(picked) && typeof picked.id === "string" ? picked.id : null;
+      if (nextId !== hoveredIdRef.current) {
+        hoveredIdRef.current = nextId;
+        onHover(nextId);
+      }
     }, ScreenSpaceEventType.MOUSE_MOVE);
     const rotate = viewer.clock.onTick.addEventListener(() => {
       if (!interacted.current && !reducedMotion)
         viewer.scene.camera.rotate(Cartesian3.UNIT_Z, -0.00018);
     });
     return () => {
+      disposed = true;
       rotate();
       handler.destroy();
       viewer.destroy();
       viewerRef.current = null;
+      linesRef.current = null;
+      pointsRef.current = null;
+      hoveredIdRef.current = null;
     };
   }, [onHover, onSelect, reducedMotion]);
 
   useEffect(() => {
     const viewer = viewerRef.current;
-    if (!viewer) return;
-    const old = viewer.scene.primitives.get(0);
-    while (viewer.scene.primitives.length)
-      viewer.scene.primitives.remove(viewer.scene.primitives.get(0));
-    void old;
-    const lines = viewer.scene.primitives.add(new PolylineCollection());
-    const points = viewer.scene.primitives.add(new PointPrimitiveCollection());
+    const lines = linesRef.current;
+    if (!viewer || !lines) return;
+    lines.removeAll();
     storms.forEach((s) => {
       const track = tracks.get(s.id);
       if (!track?.length) return;
@@ -157,6 +169,19 @@ export default function StormGlobe({
           id: s.id,
         }),
       );
+    });
+    viewer.scene.requestRender();
+  }, [storms, tracks, selectedId]);
+
+  useEffect(() => {
+    const viewer = viewerRef.current;
+    const points = pointsRef.current;
+    if (!viewer || !points) return;
+    points.removeAll();
+    storms.forEach((s) => {
+      const track = tracks.get(s.id);
+      if (!track?.length) return;
+      const selected = s.id === selectedId;
       let p: TrackPoint | null;
       if (mode === "lives") p = lifecyclePosition(track, lifecycle, alignPeak);
       else if (mode === "eyes" || mode === "portrait")

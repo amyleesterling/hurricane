@@ -343,6 +343,17 @@ a {
   width: 100%;
   display: block;
 }
+.satellite-frame canvas {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 9;
+}
+.satellite-frame.reconstruction {
+  border-color: rgba(197, 168, 255, 0.28);
+}
+.satellite-frame.reconstruction figcaption {
+  color: #bca9d8;
+}
 .satellite-frame figcaption {
   padding: 7px 9px;
   font: 7px DM Mono;

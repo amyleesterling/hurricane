@@ -43,6 +43,7 @@ function duration(s: StormSummary) {
 
 export default function App() {
   const store = useStore();
+  const setStore = useStore((state) => state.set);
   const [manifest, setManifest] = useState<Manifest | null>(null);
   const [tracks, setTracks] = useState<Map<string, TrackPoint[]>>(new Map());
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -109,12 +110,12 @@ export default function App() {
   const selected =
     manifest?.storms.find((s) => s.id === store.selectedId) || null;
   const select = useCallback(
-    (id: string) => store.set({ selectedId: id }),
-    [store],
+    (id: string) => setStore({ selectedId: id }),
+    [setStore],
   );
   const hover = useCallback(
-    (id: string | null) => store.set({ hoverId: id }),
-    [store],
+    (id: string | null) => setStore({ hoverId: id }),
+    [setStore],
   );
   useEffect(() => {
     const p = new URLSearchParams();
@@ -515,6 +516,9 @@ function Detail({
           </figcaption>
         </figure>
       )}
+      {!storm.imagery.thumbnail && imageryOn && (
+        <StormReconstruction storm={storm} opacity={imageryOpacity} />
+      )}
       <div className="intensity">
         <span>
           <b>{storm.maxWindKt ?? "—"}</b>
@@ -571,6 +575,95 @@ function Detail({
         <button onClick={() => onPrevNext(1)}>Next →</button>
       </div>
     </aside>
+  );
+}
+
+function StormReconstruction({
+  storm,
+  opacity,
+}: {
+  storm: StormSummary;
+  opacity: number;
+}) {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const context = canvas.getContext("2d");
+    if (!context) return;
+    const width = 640;
+    const height = 360;
+    canvas.width = width;
+    canvas.height = height;
+    let seed = [...storm.id].reduce(
+      (value, character) =>
+        (Math.imul(value, 31) + character.charCodeAt(0)) >>> 0,
+      2166136261,
+    );
+    const random = () => {
+      seed ^= seed << 13;
+      seed ^= seed >>> 17;
+      seed ^= seed << 5;
+      return (seed >>> 0) / 4294967296;
+    };
+    const image = context.createImageData(width, height);
+    const pixels = image.data;
+    const centerX = width * (0.48 + (random() - 0.5) * 0.08);
+    const centerY = height * (0.5 + (random() - 0.5) * 0.1);
+    const strength = Math.min(1, (storm.maxWindKt ?? 45) / 165);
+    const rotation = random() * Math.PI * 2;
+    for (let y = 0; y < height; y += 1) {
+      for (let x = 0; x < width; x += 1) {
+        const dx = (x - centerX) / height;
+        const dy = (y - centerY) / height;
+        const radius = Math.sqrt(dx * dx + dy * dy);
+        const angle = Math.atan2(dy, dx) + rotation;
+        const spiral = Math.sin(angle * 4 - radius * (32 + strength * 12));
+        const outerBands = Math.max(0, spiral * 0.5 + 0.5 - radius * 0.42);
+        const core = Math.exp(-radius * radius * 34);
+        const eye = Math.exp(-radius * radius * 620);
+        const asymmetry = 0.78 + 0.22 * Math.sin(angle - radius * 8);
+        const grain = (random() - 0.5) * 34;
+        const cloud = Math.max(
+          0,
+          Math.min(
+            255,
+            22 + outerBands * 155 * asymmetry + core * 105 - eye * 205 + grain,
+          ),
+        );
+        const offset = (y * width + x) * 4;
+        pixels[offset] = cloud * 0.9;
+        pixels[offset + 1] = cloud * 0.98;
+        pixels[offset + 2] = cloud;
+        pixels[offset + 3] = 255;
+      }
+    }
+    context.putImageData(image, 0, 0);
+    const glow = context.createRadialGradient(
+      centerX,
+      centerY,
+      6,
+      centerX,
+      centerY,
+      height * 0.48,
+    );
+    glow.addColorStop(0, "rgba(220, 250, 252, .2)");
+    glow.addColorStop(0.55, "rgba(90, 194, 205, .08)");
+    glow.addColorStop(1, "rgba(0, 0, 0, .58)");
+    context.fillStyle = glow;
+    context.fillRect(0, 0, width, height);
+  }, [storm]);
+  return (
+    <figure className="satellite-frame reconstruction">
+      <canvas
+        ref={canvasRef}
+        style={{ opacity }}
+        aria-label={`Visual reconstruction of ${storm.name || storm.id} based on track and intensity; not satellite data`}
+      />
+      <figcaption>
+        VISUAL RECONSTRUCTION · TRACK + INTENSITY · NOT SATELLITE DATA
+      </figcaption>
+    </figure>
   );
 }
 
